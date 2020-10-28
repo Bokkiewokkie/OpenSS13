@@ -7,7 +7,7 @@
 obj/machinery/door
 	name = "door"
 	icon = 'doors.dmi'
-	icon_state = "door1"
+	icon_state = "door"
 	opacity = 1
 	density = 1
 	anchored = 1
@@ -40,8 +40,8 @@ obj/machinery/door
 		if (src.operating)
 			return
 		src.operating = 1
-		flick(text("[]doorc0", (src.p_open ? "o_" : null)), src)
-		src.icon_state = text("[]door0", (src.p_open ? "o_" : null))
+		flick(text("[][initial(icon_state)]c0", (src.p_open ? "o_" : null)), src)
+		src.icon_state = text("[][initial(icon_state)]0", (src.p_open ? "o_" : null))
 		sleep(15)
 		src.density = 0
 		src.opacity = 0
@@ -59,8 +59,8 @@ obj/machinery/door
 		if (src.operating)
 			return
 		src.operating = 1
-		flick(text("[]doorc1", (src.p_open ? "o_" : null)), src)
-		src.icon_state = text("[]door1", (src.p_open ? "o_" : null))
+		flick(text("[][initial(icon_state)]c1", (src.p_open ? "o_" : null)), src)
+		src.icon_state = text("[][initial(icon_state)]1", (src.p_open ? "o_" : null))
 		src.density = 1
 		if (src.visible)
 			src.opacity = 1
@@ -87,16 +87,16 @@ obj/machinery/door
 		if (istype(user, /mob/drone))
 			if (user:controlledBy != null)
 				user = user:controlledBy
-				
+
 		if(istype(user, /mob/human))
 			var/mob/human/H = user
 			if(H.wear_id)
 				attackby(H.wear_id, user)
 		else if(istype(user, /mob/ai))
 			attackby(user, user)
-		
-		
-		
+
+
+
 	// Does it accept IDs?
 
 	proc/acceptsIDs()

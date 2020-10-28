@@ -25,7 +25,11 @@ AUTO_FILE_DIR: ON
 #define FILE_DIR "Code/mob"
 #define FILE_DIR "Code/Object"
 #define FILE_DIR "Icons"
-#define FILE_DIR "Interface"
+#define FILE_DIR "Icons/Effects"
+#define FILE_DIR "Icons/Machines"
+#define FILE_DIR "Icons/Mobs"
+#define FILE_DIR "Icons/Objects"
+#define FILE_DIR "Icons/Turfs"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
